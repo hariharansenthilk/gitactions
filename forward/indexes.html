@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample App</title>
+</head>
+<body>
+    <h1>Frontend 🚀</h1>
+    <button onclick="getData()">Call Backend</button>
+    <p id="result"></p>
+
+    <script>
+        async function getData() {
+            const res = await fetch("http://<EC2-PUBLIC-IP>:5000/api");
+            const data = await res.json();
+            document.getElementById("result").innerText = data.message;
+        }
+    </script>
+</body>
+</html>
